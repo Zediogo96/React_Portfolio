@@ -10,7 +10,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 		<AnchorLink
 			className={`${
 				selectedPage === lowerCasePage ? "text-red" : ""
-			} hover-text-yellow transition duration-500`}
+			} hover:text-yellow transition duration-500`}
 			href={`#${lowerCasePage}`}
 			onClick={() => setSelectedPage(lowerCasePage)}
 		>
@@ -63,18 +63,21 @@ function Navbar({ selectedPage, setSelectedPage }) {
 					</div>
 				) : (
 					/* MOBILE NAV */
-					<button
-						className="rounded-full bg-red p-2"
-						onClick={setIsMenuToggled}
-					>
-						<Bars3Icon className="h-6 w-6 text-white" />
-					</button>
+
+					!isMenuToggled && (
+						<button
+							className="rounded-full bg-red p-2 animate-rotate-and-fade-in"
+							onClick={setIsMenuToggled}
+						>
+							<Bars3Icon className="h-6 w-6 text-white" />
+						</button>
+					)
 				)}
 
 				{/* MOBILE MENU POPUP */}
 				{!isAboveSmallScreens && isMenuToggled && (
 					<div
-						className={`fixed right-0 bottom-0 h-full bg-blue w-[300px] transition ${
+						className={`fixed right-0 bottom-0 h-full bg-blue shadow-[-10px_-2px_13px_0px_rgba(86,127,180);] shadow-red-500 w-[300px] transition ${
 							isMenuToggled ? "animate-fade-in" : ""
 						} 
 						${isClosing ? "animate-fade-out" : ""}`}

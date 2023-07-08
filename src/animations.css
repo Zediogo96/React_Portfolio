@@ -6,6 +6,10 @@
     animation: fade-out 0.5s;
 }
 
+.animate-rotate-and-fade-in {
+    animation: rotate-and-fade-in 0.5s;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -27,5 +31,19 @@
     100% {
         opacity: 0;
         transform: translateX(20px);
+        color: rgb(86, 127, 180);
     }
 }
+
+@keyframes rotate-and-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(20px) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(180deg);
+    }
+}
+
