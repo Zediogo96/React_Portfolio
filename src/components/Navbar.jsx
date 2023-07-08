@@ -22,6 +22,16 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 function Navbar({ selectedPage, setSelectedPage }) {
 	const [isMenuToggled, setIsMenuToggled] = useState(false);
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+	const [isClosing, setIsClosing] = useState(false);
+
+	const handleMenuClose = () => {
+		setIsClosing(true);
+
+		setTimeout(() => {
+			setIsMenuToggled(!isMenuToggled);
+			setIsClosing(false);
+		}, 450);
+	};
 
 	return (
 		<nav className={`z-40 w-full fixed top-0 py-6`}>
@@ -63,10 +73,15 @@ function Navbar({ selectedPage, setSelectedPage }) {
 
 				{/* MOBILE MENU POPUP */}
 				{!isAboveSmallScreens && isMenuToggled && (
-					<div className={`fixed right-0 bottom-0 h-full bg-blue w-[300px] transition ${isMenuToggled ? "animate-fade-in" : ""} `}>
+					<div
+						className={`fixed right-0 bottom-0 h-full bg-blue w-[300px] transition ${
+							isMenuToggled ? "animate-fade-in" : ""
+						} 
+						${isClosing ? "animate-fade-out" : ""}`}
+					>
 						{/* CLOSE ICON */}
 						<div className="flex justify-end p-12">
-							<button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+							<button onClick={handleMenuClose}>
 								<XMarkIcon className="h-6 w-6 text-white" />
 							</button>
 						</div>
