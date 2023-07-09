@@ -4,9 +4,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
 
-
 html, body, #root, .app {
     height: 100%;
-    background-color: #010026;
     @apply text-white;
+    background: linear-gradient(-45deg, #66243d, #002126, #0c3f33);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 32 32"><polygon fill="%23000000" points="10,10 22,16 10,22"/></svg>') 30 30, auto;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
