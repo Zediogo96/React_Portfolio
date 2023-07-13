@@ -14,7 +14,7 @@ const Footer = () => {
 					</p>
 				</div>
 
-                <SocialMediaIcons />
+                <SocialMediaIcons className="mt-5"/>
 			</div>
 		</footer>
 	);

@@ -2,7 +2,6 @@ import { useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
-import DotGroup from "./components/DotGroup";
 import MySkills from "./components/MySkills";
 import { motion } from "framer-motion";
 import LineGradient from "./components/LineGradient";
