@@ -52,11 +52,11 @@ const MySkills = () => {
 									visible: { opacity: 1, x: 0 },
 								}}
 							>
-								<img alt="skills" className="z-10" src={skillsImage} />
+								<img alt="skills" className="z-10 mt-12" src={skillsImage} />
 							</motion.div>
 						</div>
 					) : (
-						<img alt="skills" className="z-10" src={skillsImage} />
+						<img alt="skills" className="z-10 mt-12" src={skillsImage} />
 					)}
 				</div>
 			</div>

@@ -4,15 +4,21 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import Bars3Icon from "@heroicons/react/24/solid/Bars3Icon";
 import XMarkIcon from "@heroicons/react/24/solid/XMarkIcon";
 
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const Link = ({ page, selectedPage, setSelectedPage, setIsMenuToggled }) => {
 	const lowerCasePage = page.toLowerCase();
+
+	const handleClick = () => {
+		setSelectedPage(lowerCasePage);
+		setIsMenuToggled(false);
+	};
+
 	return (
 		<AnchorLink
 			className={`${
 				selectedPage === lowerCasePage ? "text-red" : ""
 			} hover:text-yellow transition duration-500`}
 			href={`#${lowerCasePage}`}
-			onClick={() => setSelectedPage(lowerCasePage)}
+			onClick={handleClick}
 		>
 			{page}
 		</AnchorLink>
@@ -23,16 +29,17 @@ function Navbar({ selectedPage, setSelectedPage }) {
 	const [isMenuToggled, setIsMenuToggled] = useState(false);
 	const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 	const [isClosing, setIsClosing] = useState(false);
+	const [hasScrolled, setHasScrolled] = useState(false);
 
-	const [isMouseHovered, setIsMouseHovered] = useState(false);
-
-	const handleMouseMove = (event) => {
-		const { clientX, clientY } = event;
-
-		(clientY < 100) ? setIsMouseHovered(true) : setIsMouseHovered(false);
+	const handleScroll = () => {
+		if (window.scrollY > 100) setHasScrolled(true);
+		else {
+			setHasScrolled(false);
+			setIsMenuToggled(false);
+		}
 	};
 
-	document.addEventListener("mousemove", handleMouseMove);
+	window.addEventListener("scroll", handleScroll);
 
 	const handleMenuClose = () => {
 		setIsClosing(true);
@@ -44,35 +51,35 @@ function Navbar({ selectedPage, setSelectedPage }) {
 	};
 
 	return (
-		<nav
-			className={`z-40 w-full ${
-				isMouseHovered ? "backdrop-blur-sm" : ""
-			} fixed top-0 py-6`}
-		>
+		<nav className={`z-40 w-full fixed top-0 py-6`}>
 			<div className="flex items-center justify-between mx-auto w-5/6">
 				<h4 className="font-playfair text-3xl font-bold text-white"> ZD </h4>
 				{/* DESKTOP NAV */}
-				{isAboveSmallScreens ? (
+				{isAboveSmallScreens && !hasScrolled ? (
 					<div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
 						<Link
 							page="Home"
 							selectedPage={selectedPage}
 							setSelectedPage={setSelectedPage}
+							setIsMenuToggled={setIsMenuToggled}
 						/>
 						<Link
 							page="Skills"
 							selectedPage={selectedPage}
 							setSelectedPage={setSelectedPage}
+							setIsMenuToggled={setIsMenuToggled}
 						/>
 						<Link
 							page="Projects"
 							selectedPage={selectedPage}
 							setSelectedPage={setSelectedPage}
+							setIsMenuToggled={setIsMenuToggled}
 						/>
 						<Link
 							page="Contact"
 							selectedPage={selectedPage}
 							setSelectedPage={setSelectedPage}
+							setIsMenuToggled={setIsMenuToggled}
 						/>
 					</div>
 				) : (
@@ -89,9 +96,9 @@ function Navbar({ selectedPage, setSelectedPage }) {
 				)}
 
 				{/* MOBILE MENU POPUP */}
-				{!isAboveSmallScreens && isMenuToggled && (
+				{isMenuToggled && (
 					<div
-						className={`fixed right-0 bottom-0 h-full bg-blue shadow-[-10px_-2px_13px_0px_rgba(86,127,180);] shadow-red-500 w-[300px] transition ${
+						className={`fixed right-0 bottom-0 h-full bg-blue opacity-[0.95] shadow-[-10px_-2px_13px_0px_rgba(86,127,180);] shadow-red-500 w-[300px] transition ${
 							isMenuToggled ? "animate-fade-in" : ""
 						} 
 						${isClosing ? "animate-fade-out" : ""}`}
@@ -109,22 +116,26 @@ function Navbar({ selectedPage, setSelectedPage }) {
 								page="Home"
 								selectedPage={selectedPage}
 								setSelectedPage={setSelectedPage}
+								setIsMenuToggled={setIsMenuToggled}
 							/>
 							<Link
 								page="Skills"
 								selectedPage={selectedPage}
 								setSelectedPage={setSelectedPage}
+								setIsMenuToggled={setIsMenuToggled}
 							/>
 							<Link
 								page="Projects"
 								selectedPage={selectedPage}
 								setSelectedPage={setSelectedPage}
+								setIsMenuToggled={setIsMenuToggled}
 							/>
 
 							<Link
 								page="Contact"
 								selectedPage={selectedPage}
 								setSelectedPage={setSelectedPage}
+								setIsMenuToggled={setIsMenuToggled}
 							/>
 						</div>
 					</div>
