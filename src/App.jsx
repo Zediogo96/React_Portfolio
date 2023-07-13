@@ -6,6 +6,7 @@ import DotGroup from "./components/DotGroup";
 import MySkills from "./components/MySkills";
 import { motion } from "framer-motion";
 import LineGradient from "./components/LineGradient";
+import Footer from "./components/Footer";
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState("home");
@@ -45,6 +46,8 @@ function App() {
 			<div className="w-5/6 mx-auto md:h-full">
 				<MySkills />
 			</div>
+
+			<Footer />
 		</div>
 	);
 }

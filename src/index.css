@@ -47,6 +47,17 @@ body,
 	padding: 10px;
 }
 
+@media (max-width: 768px) {
+	.skillsGrid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.skillsGrid img {
+		height: 50px;
+		width: 50px;
+	}
+}
+
 .skills {
 	display: flex;
 	flex-direction: column;

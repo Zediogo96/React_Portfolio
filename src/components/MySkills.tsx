@@ -25,7 +25,7 @@ const MySkills = () => {
 						MY <span className="text-red">SKILLS</span>
 					</p>
 					<LineGradient width="w-1/3" />
-					<p className="mt-10 mb-7">
+					<p className="mt-5">
 						Here are some of my skills that I have acquired over the years. <br /> I am
 						trying to improve myself every day, currently learning React and NextJS.
 					</p>
@@ -56,7 +56,7 @@ const MySkills = () => {
 							</motion.div>
 						</div>
 					) : (
-						<img alt="skills" className="z-10" src="assets/skills-image.png" />
+						<img alt="skills" className="z-10" src={skillsImage} />
 					)}
 				</div>
 			</div>
