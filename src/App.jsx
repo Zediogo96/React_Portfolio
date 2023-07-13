@@ -3,7 +3,9 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import DotGroup from "./components/DotGroup";
+import MySkills from "./components/MySkills";
 import { motion } from "framer-motion";
+import LineGradient from "./components/LineGradient";
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState("home");
@@ -12,24 +14,24 @@ function App() {
 	return (
 		<div className="app bg-deep-blue">
 			<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.5 }}
-					variants={{
-						hidden: { opacity: 0, x: 100 },
-						visible: { opacity: 1, x: 0 },
-					}}
-				>
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 0.5 }}
+				variants={{
+					hidden: { opacity: 0, x: 100 },
+					visible: { opacity: 1, x: 0 },
+				}}
+			>
 				<Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 			</motion.div>
 			<div className="w-5/6 mx-auto md:h-full">
-				{isDesktop && (
+				{/* {isDesktop && (
 					<DotGroup
 						selectedPage={selectedPage}
 						setSelectedPage={setSelectedPage}
 					/>
-				)}
+				)} */}
 				<motion.div
 					margin="0 0 -200px 0"
 					amount="all"
@@ -37,6 +39,11 @@ function App() {
 				>
 					<Landing setSelectedPage={setSelectedPage} />
 				</motion.div>
+			</div>
+			<LineGradient />
+
+			<div className="w-5/6 mx-auto md:h-full">
+				<MySkills />
 			</div>
 		</div>
 	);

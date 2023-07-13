@@ -45,6 +45,7 @@ const Landing = ({ setSelectedPage }) => {
 						hidden: { opacity: 0, x: -50 },
 						visible: { opacity: 1, x: 0 },
 					}}
+					style={{ maxWidth: "500px" }}
 				>
 					<p className="text-6xl font-playfair z-10 text-center md:text-start">
 						José
@@ -56,9 +57,9 @@ const Landing = ({ setSelectedPage }) => {
 						</span>
 					</p>
 
-					<p className="mt-10 mb-7 text-sm text-center md:text-start">
-						Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-						viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+					<p className=" mt-12 mb-7 text-sm text-center md:text-start">
+					Hi, my name is José. I'm a software developer based in Portugal. <br />
+					I'm trying to learn as much as I can about web development <br /> and I'm currently looking for a job.
 					</p>
 				</motion.div>
 
@@ -80,7 +81,10 @@ const Landing = ({ setSelectedPage }) => {
 						onClick={() => setSelectedPage("contact")}
 						href="#contact"
 					>
-            <div className="hover:text-blue transition duration-500"> Contact Me </div>
+						<div className="hover:text-blue transition duration-500">
+							{" "}
+							Contact Me{" "}
+						</div>
 					</AnchorLink>
 					<AnchorLink
 						className="hover:border-red border-t-2 border-b-2 py-0.5"
