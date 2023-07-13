@@ -14,22 +14,42 @@ const Landing = ({ setSelectedPage }) => {
 			{/* IMAGE SECTION */}
 			<div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2 relative group">
 				{isAboveLarge ? (
-					<div
-						className="relative  z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
-            before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-blue before:z-[-1] before:group-hover:border-purple-400"
+					<motion.div
+						className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
+							before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-blue before:z-[-1] before:group-hover:border-purple-400"
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ duration: 0.5 }}
+						variants={{
+							hidden: { opacity: 0, y: -50 },
+							visible: { opacity: 1, y: 0 },
+						}}
 					>
 						<img
 							src={profilePicture}
 							alt="profile"
 							className="hover:filter hover:saturate-100 transition duration-500 z-10 w-full max-w-[350px] md:max-w-[550px] rounded-tr-full rounded-tl-full"
 						/>
-					</div>
+					</motion.div>
 				) : (
+
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.5 }}
+						transition={{ duration: 0.5 }}
+						variants={{
+							hidden: { opacity: 0, y: -50 },
+							visible: { opacity: 1, y: 0 },
+						}}
+					>
 					<img
 						src={profilePicture}
 						alt="profile"
 						className="z-10 w-full max-w-[400px] md:max-w-[550px]"
 					/>
+					</motion.div>
 				)}
 			</div>
 
@@ -59,8 +79,10 @@ const Landing = ({ setSelectedPage }) => {
 					</p>
 
 					<p className=" mt-12 mb-7 text-sm text-center md:text-start">
-					Hi, my name is José. I'm a software developer based in Portugal. <br />
-					I'm trying to learn as much as I can about web development <br /> and I'm currently looking for a job.
+						Hi, my name is José. I'm a software developer based in Portugal.{" "}
+						<br />
+						I'm trying to learn as much as I can about web development <br />{" "}
+						and I'm currently looking for a job.
 					</p>
 				</motion.div>
 
@@ -79,12 +101,11 @@ const Landing = ({ setSelectedPage }) => {
 					<AnchorLink
 						className="border-t-2 border-b-2 hover:border-red rounded-sm py-3 px-7 font-semibold
                hover:text-white transition duration-500"
-						onClick={() => setSelectedPage("contact")}
-						href="#contact"
+						onClick={() => setSelectedPage("projects")}
+						href="#projects"
 					>
 						<div className="hover:text-blue transition duration-500">
-							{" "}
-							Contact Me{" "}
+							Projects
 						</div>
 					</AnchorLink>
 					<AnchorLink

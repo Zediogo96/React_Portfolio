@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState("home");
-	const isDesktop = useMediaQuery("(min-width: 1060px)");
 
 	return (
 		<div className="app bg-deep-blue">
@@ -27,12 +26,7 @@ function App() {
 				<Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 			</motion.div>
 			<div className="w-5/6 mx-auto md:h-full">
-				{/* {isDesktop && (
-					<DotGroup
-						selectedPage={selectedPage}
-						setSelectedPage={setSelectedPage}
-					/>
-				)} */}
+
 				<motion.div
 					margin="0 0 -200px 0"
 					amount="all"

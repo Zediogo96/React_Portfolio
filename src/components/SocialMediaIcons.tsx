@@ -1,6 +1,7 @@
 import instagram_img from "../assets/instagram.png";
 import linkedin_img from "../assets/linkedin.png";
 import twitter_img from "../assets/twitter.png";
+import github_img from "../assets/github.png";
 
 const SocialMediaIcons = () => {
 	return (
@@ -28,6 +29,15 @@ const SocialMediaIcons = () => {
 				rel="noreferrer"
 			>
 				<img alt="instagram-link" src={instagram_img} />
+			</a>
+
+			<a
+				className="hover:opacity-50 transition duration-500 text-white"
+				href="https://github.com/Zediogo96"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<img alt="github-link" src={github_img} />
 			</a>
 		</div>
 	);

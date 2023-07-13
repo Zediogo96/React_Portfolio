@@ -18,19 +18,19 @@ const projectVariant = {
 
 const Project = ({ imgSrc, title, text, githubURL=""}) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue`;
+    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-deep-blue inside-border`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
-    <motion.div variants={projectVariant} className="relative">
+    <motion.a href={githubURL} target="_blank"  variants={projectVariant} className="relative">
       <div className={overlayStyles}>
         <p className="text-2xl text-red font-playfair">{title}</p>
         <p className="mt-7">
           {text}
         </p>
       </div>
-      <img className="w-[400px] h-[350px]"src={"../assets/" + imgSrc} alt={projectTitle} />
-    </motion.div>
+      <img className=" w-[400px] h-[350px]"src={"../assets/" + imgSrc} alt={projectTitle} />
+    </motion.a>
   );
 };
 
@@ -82,16 +82,15 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-          <Project imgSrc={projects[0].imgsrc} title={projects[0].title} text={projects[0].text} githubURL={projects[0].githubURL} />
-            <Project imgSrc={projects[1].imgsrc} title={projects[1].title} text={projects[1].text} githubURL={projects[1].githubURL} />
 
-
-          {/* ROW 2 */}
-            <Project imgSrc={projects[2].imgsrc} title={projects[2].title} text={projects[2].text} githubURL={projects[2].githubURL} />
-            <Project imgSrc={projects[3].imgsrc} title={projects[3].title} text={projects[3].text} githubURL={projects[3].githubURL} />
-   
-
-          {/* ROW 3 */}
+          {ProjectsData.map((project) => (
+            <Project
+              imgSrc={project.imgsrc}
+              title={project.title}
+              text={project.text}
+              githubURL={project.github_url}
+            />
+          ))}   
           
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
