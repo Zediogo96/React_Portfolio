@@ -1,8 +1,8 @@
-// import SocialMediaIcons from "../components/SocialMediaIcons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import profilePicture from "./../assets/profilePic.jpg";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const Landing = ({ setSelectedPage }) => {
 	const isAboveLarge = useMediaQuery("(min-width: 1060px)");
@@ -46,6 +46,7 @@ const Landing = ({ setSelectedPage }) => {
 						visible: { opacity: 1, x: 0 },
 					}}
 					style={{ maxWidth: "500px" }}
+					className=""
 				>
 					<p className="text-6xl font-playfair z-10 text-center md:text-start">
 						José
@@ -108,7 +109,7 @@ const Landing = ({ setSelectedPage }) => {
 						visible: { opacity: 1, x: 0 },
 					}}
 				>
-					{/* <SocialMediaIcons /> */}
+					<SocialMediaIcons />
 				</motion.div>
 			</div>
 		</section>

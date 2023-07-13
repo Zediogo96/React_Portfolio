@@ -110,8 +110,7 @@ const MySkills = () => {
 					<p className="mt-5">
 						Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
 						amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-						nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-						faucibus a
+						nulla amet habitant iaculis.
 					</p>
 				</motion.div>
 				{/* IMAGINATIVE */}
