@@ -53,7 +53,9 @@ function Navbar({ selectedPage, setSelectedPage }) {
 	return (
 		<nav className={`z-40 w-full fixed top-0 py-6`}>
 			<div className="flex items-center justify-between mx-auto w-5/6">
-				<h4 className="font-playfair text-3xl font-bold text-white"> ZD </h4>
+				{isAboveSmallScreens && !hasScrolled && (
+					<h4 className="font-playfair text-3xl font-bold text-white"> ZD </h4>
+				)}
 				{/* DESKTOP NAV */}
 				{isAboveSmallScreens && !hasScrolled ? (
 					<div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
@@ -87,7 +89,7 @@ function Navbar({ selectedPage, setSelectedPage }) {
 
 					!isMenuToggled && (
 						<button
-							className="rounded-full bg-red p-2 animate-rotate-and-fade-in"
+							className="rounded-full bg-red p-2 animate-rotate-and-fade-in absolute right-12 top-7"
 							onClick={setIsMenuToggled}
 						>
 							<Bars3Icon className="h-6 w-6 text-white" />
