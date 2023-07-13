@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
 import MySkills from "./components/MySkills";
 import { motion } from "framer-motion";
-import LineGradient from "./components/LineGradient";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
@@ -41,11 +41,21 @@ function App() {
 					<Landing setSelectedPage={setSelectedPage} />
 				</motion.div>
 			</div>
-			
-			<br /> 
+
+			<br />
 
 			<div className="w-5/6 mx-auto md:h-full">
 				<MySkills />
+			</div>
+
+			<div className="w-5/6 mx-auto">
+				<motion.div
+					margin="0 0 -200px 0"
+					amount="all"
+					onViewportEnter={() => setSelectedPage("projects")}
+				>
+					<Projects />
+				</motion.div>
 			</div>
 
 			<div className="w-5/6 mx-auto md:h-full">
