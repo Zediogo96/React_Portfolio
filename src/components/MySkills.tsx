@@ -62,10 +62,10 @@ const MySkills = () => {
 			</div>
 
 			{/* SKILLS */}
-			<div className="md:flex md:justify-between mt-16 gap-32">
+			<div className="md:flex md:justify-between mt-16 gap-12 md:gap-32">
 				{/* EXPERIENCE */}
 				<motion.div
-					className="md:w-1/3 mt-10"
+					className="md:w-1/3 mt-10 mr-10"
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, amount: 0.5 }}
@@ -75,19 +75,17 @@ const MySkills = () => {
 						visible: { opacity: 1, y: 0 },
 					}}
 				>
-					<div className="relative h-32">
+					<div className="relative h-32 w-1/3">
 						<div className="z-10">
 							<p className="font-playfair font-semibold text-5xl">01</p>
 							<p className="font-playfair font-semibold text-3xl mt-3">
 								Experience
 							</p>
 						</div>
-						<div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
 					</div>
 					<p className="mt-5">
-						A auctor pharetra hendrerit mattis amet etiam interdum platea. Est
-						morbi porttitor scelerisque fermentum, sagittis non egestas. Amet
-						odio sit sagittis,
+						Currently looking for my first opportunity as a Software Developer.
+						I think my skills  and knowledge would be a great fit for a web development role, but I am open to other opportunities.
 					</p>
 				</motion.div>
 
@@ -110,15 +108,13 @@ const MySkills = () => {
 								Creative
 							</p>
 						</div>
-						<div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+
 					</div>
 					<p className="mt-5">
-						Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-						amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-						nulla amet habitant iaculis.
+						My main focus is not being able to design a website, although I consider myself to be a creative person, as I'm able to transcript good ideas into code.
 					</p>
 				</motion.div>
-				{/* IMAGINATIVE */}
+				{/* ALWAYS LEARNING */}
 				<motion.div
 					className="md:w-1/3 mt-10"
 					initial="hidden"
@@ -137,13 +133,10 @@ const MySkills = () => {
 								Always learning
 							</p>
 						</div>
-						<div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+
 					</div>
 					<p className="mt-5">
-						Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in
-						curabitur. Lectus libero, egestas enim aliquam quis felis amet.
-						Sagittis, amet netus fringilla netus lobortis odio sed platea.
-						Bibendum.
+						I have a strong desire to learn and improve my skills, and I am always looking for new challenges. I am currently learning React and NextJS.
 					</p>
 				</motion.div>
 			</div>

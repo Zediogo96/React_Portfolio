@@ -60,9 +60,10 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-          fames odio in at. At magna ornare dictum lectus. Purus massa morbi
-          purus nec eget eleifend ut elit.
+          This section showcases some of my projects. I have worked on a variety
+          of projects during my University but also in my free time. I am
+          passionate about creating beautiful user interfaces and smooth user
+          experiences.
         </p>
       </motion.div>
 
