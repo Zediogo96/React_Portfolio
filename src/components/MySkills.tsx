@@ -2,6 +2,7 @@ import LineGradient from "../components/LineGradient";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import skillsImage from "../assets/skills-image.png";
+import Skills from "./SkillsIcons";
 
 const MySkills = () => {
 	const isAboveLarge = useMediaQuery("(min-width: 1060px)");
@@ -28,6 +29,10 @@ const MySkills = () => {
 						Here are some of my skills that I have acquired over the years. <br /> I am
 						trying to improve myself every day, currently learning React and NextJS.
 					</p>
+
+					<br/>
+
+					<Skills />
 				</motion.div>
 
 				<div className="mt-16 md:mt-0">
