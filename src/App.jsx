@@ -6,6 +6,7 @@ import MySkills from "./components/MySkills";
 import { motion } from "framer-motion";
 import LineGradient from "./components/LineGradient";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 function App() {
 	const [selectedPage, setSelectedPage] = useState("home");
@@ -40,10 +41,21 @@ function App() {
 					<Landing setSelectedPage={setSelectedPage} />
 				</motion.div>
 			</div>
-			<LineGradient />
+			
+			<br /> 
 
 			<div className="w-5/6 mx-auto md:h-full">
 				<MySkills />
+			</div>
+
+			<div className="w-5/6 mx-auto md:h-full">
+				<motion.div
+					margin="0 0 -200px 0"
+					amount="all"
+					onViewportEnter={() => setSelectedPage("contact")}
+				>
+					<Contact />
+				</motion.div>
 			</div>
 
 			<Footer />

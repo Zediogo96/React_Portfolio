@@ -15,7 +15,6 @@ module.exports = {
         'transparent-white': 'rgba(255, 255, 255, 0.1)',
         "gradient-rainbow":
         "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
-
       "gradient-rainblue":
         "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
       },
@@ -25,7 +24,9 @@ module.exports = {
 
         "gradient-rainblue":
           "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
+        "gradient-blue": "linear-gradient(to left bottom, rgb(139, 234, 254), rgb(147, 197, 253), rgb(129, 130, 246))",
       }),
+
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
         opensans: ["Open Sans", "sans-serif"],
